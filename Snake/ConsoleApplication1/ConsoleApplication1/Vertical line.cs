@@ -6,17 +6,20 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    class Horizontal_line : ConsoleApplication1.Figure
+    class Vertical_line : Figure
     {
         pList = new List<Point>();
-        public Horizontal_line(int xLeft, int xRight, int y, char sym)
+        public Vertical_line(int x, int yUp, int yDown, char sym)
         {
-            for (int x = xLeft; x < xRight; x++)
+            for (int y = yUp; y < yDown; y++)
             {
                 Point p = new Point(x, y, sym);
                 pList.Add(p);
             }
-
+            foreach (Point p in pList)
+            {
+                p.Draw();
+            }
         }
     }
 }

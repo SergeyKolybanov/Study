@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleApplication1;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,8 +18,22 @@ namespace ConsoleApplication1
         }
         public Point (int _x, int _y, char _sym)
         {
-            x = _x;
-            y = _y;
+            if (_x < Snake.x)
+            {
+                x = _x;
+            }
+            else
+            {
+                x = Snake.x;
+            }
+            if (_y < Snake.y)
+            {
+                y = _y;
+            }
+            else
+            {
+                y = Snake.y;
+            }
             sym = _sym;
         }
         public void Draw()
